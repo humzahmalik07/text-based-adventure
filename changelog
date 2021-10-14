@@ -1,0 +1,32 @@
+# changelog
+All notable changes of this project will be documented here 
+
+
+## [0.0.3] 2021-08-14
+### Added
+- A map is created and added to the code
+- The map doesn't require movement. It only prints out.
+
+### Changed
+- All fucntions are stored into modules based on their type and category
+
+
+## [0.0.2] 2021-07-30
+### Added
+- inventory is added to the game
+- inventory consists of hints for each specific character
+- A new action for each character is added as an hint
+
+### Changed
+- The original character is changed with two new characters
+- The original storyline of the game is changed
+
+### removed
+- The original character is removed
+
+
+## [0.0.1] 2021-09-16
+# Original version
+- A text-based adventure game is created
+- consists of one character only
+- It's purpose is to move around a "temple" and find his way out

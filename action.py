@@ -1,80 +1,3 @@
-import Character
-import inventory
-import action
-import os
-import sys
-
-# Course: CS 30
-# Period: 2
-# Date created: 19/07/21
-# Date last modified: 21/07/21
-# Name: Humzah Zahid Malik
-# Description: Batman x Green Lantern - Temple Escape
-
-def introduction():
-  print("""
-Batman and Green Lantern are on a mission to find an underground enemy base.
-While they are looking for the base, the enemy is notified of their mission
-Batman and Green Lantern need to find their way out and escape the temple.
-
-You can go only four directions to escape:
-forward, backward, right, left
-""")
-
-introduction()
-
-# prints the introduction of the game
-
-
-inventory_input = input("Batman or Green Lantern: ")
-
-# This inventory is paired with specific characters
-inventory.inventory = {"Batman": {"Night Vision Goggles":
-                        {"description": "Use the Night Vision Goggles to see in the dark and find your way",
-                         "damage": 10, "protection": 0},
-                         },
-             "Green Lantern": {"Power Ring":
-                           {"description":
-                            "Use this ring as a flashlight to find their way",
-                            "damage": 0, "protection": 0}}
-             }
-
-
-# This function defines the player inventory
-
-
-def player_inventory(player, inventory):
-    """Print out the inventory for the choosen character"""
-    protection_items = []
-    weapons = []
-    for item in inventory[player]:
-        description = inventory[player][item]["description"]
-        damage = inventory[player][item]["damage"]
-        protection = inventory[player][item]["protection"]
-        print(f"{player}'s {item} - {description}")
-        print(f"damage: {damage}")
-        print(f"protection: {protection}")
-        if protection != 0 and damage == 0:
-            protection_items.append(item)
-        elif damage != 0:
-            weapons.append(item)
-    return protection_items, weapons
-
-def character_intro():
-    print("""
-  You have chosen Batman as you character. You will use Batman to get out
-  of this maze. You can use a hint to complete a level. """
-          )
-
-# This function defines the intro for Green Lantern
-
-
-def character_intro_2():
-    print(
-        """ You have chosen Green Lantern as you character. You will use Green Lantern
-        to get out of this maze. You can use a hint to complete a level. """
-    )
-
 # valid directions and actions to move
 
 valid_actions = ["forward", "backward", "left", "right"]
@@ -95,21 +18,21 @@ valid_hint = ["ring"]
 def menu():
     print("""Choose an action:
     """)
-    for actions in valid_actions:
+    for action in valid_actions:
         print(f"* {action}")
 
 # This defines the menu for the hint for Batman
 
 
 def menu_2():
-    for actions in valid_actions_2:
+    for action in valid_actions_2:
         print(f"* {action}")
 
 # This defines the menu for the hint for Green Lantern
 
 
 def menu_3():
-    for actions in valid_hint:
+    for action in valid_hint:
         print(f"* {action}")
 
 
@@ -742,35 +665,3 @@ def actions_9():
     elif action_input.lower not in valid_actions:
         print("Invalid direction!")
         actions_9()
-
-
-while True:
-    if inventory_input == "Batman":
-        player_inventory("Batman", inventory)
-        Character.character_intro()
-        action.action_1()
-        action.action_2()
-        action.action_3()
-        action.action_4()
-        action.action_5()
-        action.action_6()
-        action.action_7()
-        action.action_8()
-        action.action_9()
-        quit()
-    if inventory_input == "Green Lantern":
-        player_inventory("Green Lantern", inventory)
-        Character.character_intro_2()
-        action.actions_1()
-        action.actions_2()
-        action.actions_3()
-        action.actions_4()
-        action.actions_5()
-        action.actions_6()
-        action.actions_7()
-        action.actions_8()
-        action.actions_9()
-        quit()
-    else:
-        print("invalid action")
-        os.execl(sys.executable, sys.executable, *sys.argv)
