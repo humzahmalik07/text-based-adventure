@@ -293,21 +293,21 @@ def action_8():
     menu()
     action_input = input("Action: ")
     if action_input.lower() in valid_actions[0]:
-        print(f" wall ahead ")
-        action_8()
+        print(f" Go forward ")
+        action_9()
     if action_input.lower() in valid_actions[1]:
         print(f" Wrong way! ")
         action_8()
     if action_input.lower() in valid_actions[2]:
-        print(f" Turn left. You are getting closer!")
-        action_9()
+        print(f" wall ahead")
+        action_8()
     if action_input.lower() in valid_actions[3]:
         print(f" Wall ahead ")
         action_8()
     if action_input.lower() in valid_actions_2[0]:
         print(f""" You have chosen to use the Night Vision Goggles.
             This gives you a hint for you next direction.
-            The direction is left. Enter left when the menu restarts.""")
+            The direction is forward. Enter forward when the menu restarts.""")
     if action_input.lower not in valid_actions_2:
         print("Invalid direction!")
         action_8()
@@ -326,9 +326,8 @@ def action_9():
     menu()
     action_input = input("Action: ")
     if action_input.lower() in valid_actions[0]:
-        print(f""" You found the exit! """)
-        end_script()
-        quit()
+        print(f""" Go forward. You are getting closer! """)
+        action_10()
     if action_input.lower() in valid_actions[1]:
         print(f" Wrong way! ")
         action_9()
@@ -341,16 +340,47 @@ def action_9():
     if action_input.lower() in valid_actions_2[0]:
         print(f""" You have chosen to use the Night Vision Goggles.
             This gives you a hint for you next direction.
-            The final direction is forward.
+            The direction is forward.
             Enter forward when the menu restarts."""
               )
         action_9()
     if action_input.lower not in valid_actions_2:
         print("Invalid direction!")
-        action_1()
+        action_9()
     elif action_input.lower not in valid_actions:
         print("Invalid direction!")
         action_9()
+
+def action_10():
+    print("""
+        LEVEL 10
+        """)
+    menu()
+    action_input = input("Action: ")
+    if action_input.lower() in valid_actions[0]:
+        print(f" You found the exit!! ")
+        end_script()
+        quit()
+    if action_input.lower() in valid_actions[1]:
+        print(f" Wrong way! ")
+        action_10()
+    if action_input.lower() in valid_actions[2]:
+        print(f" Wall ahead ")
+        action_10()
+    if action_input.lower() in valid_actions[3]:
+        print(f" Wall ahead ")
+        action_10()
+    if action_input.lower() in valid_actions_2[0]:
+        print(f""" You have chosen to use the Night Vision Goggles.
+            This gives you a hint for you next direction.
+            The direction is forward. Enter forward when the menu restarts.""")
+    if action_input.lower not in valid_actions_2:
+        print("Invalid direction!")
+        action_10()
+    elif action_input.lower not in valid_actions:
+        print("Invalid direction!")
+        action_10()
+
 
 # This defines the first action taken by the user for Green Lantern
 
@@ -607,14 +637,14 @@ def actions_8():
     menu_3()
     action_input = input("Action: ")
     if action_input.lower() in valid_actions[0]:
-        print(f" wall ahead ")
-        actions_8()
+        print(f" Go forward ")
+        actions_9()
     if action_input.lower() in valid_actions[1]:
         print(f" Wrong way! ")
         actions_8()
     if action_input.lower() in valid_actions[2]:
-        print(f" Turn left. You are getting closer!")
-        actions_9()
+        print(f" Wall ahead")
+        actions_8()
     if action_input.lower() in valid_actions[3]:
         print(f" Wall ahead ")
         actions_8()
@@ -622,7 +652,7 @@ def actions_8():
         print("""You have chosen to use the Night Vision Goggles.
       This ring is used a flashlight
       and gives you a hint for you next direction.
-            The direction is left. Enter left when the menu restarts. """)
+            The direction is forward. Enter forward when the menu restarts. """)
     if action_input.lower not in valid_hint:
         print("Invalid direction!")
         actions_8()
@@ -642,9 +672,8 @@ def actions_9():
     menu_3()
     action_input = input("Action: ")
     if action_input.lower() in valid_actions[0]:
-        print(f""" You found the exit! """)
-        end_script()
-        quit()
+        print(f""" Go forward. You are getting closer """)
+        actions_10()
     if action_input.lower() in valid_actions[1]:
         print(f" Wrong way! ")
         actions_9()
@@ -665,3 +694,35 @@ def actions_9():
     elif action_input.lower not in valid_actions:
         print("Invalid direction!")
         actions_9()
+
+def actions_10():
+    print("""
+        LEVEL 10
+        """)
+    menu()
+    menu_3()
+    action_input = input("Action: ")
+    if action_input.lower() in valid_actions[0]:
+        print(f""" You have found the exit!! """)
+        end_script()
+        quit()
+    if action_input.lower() in valid_actions[1]:
+        print(f" Wrong way! ")
+        actions_10()
+    if action_input.lower() in valid_actions[2]:
+        print(f" Wall ahead")
+        actions_10()
+    if action_input.lower() in valid_actions[3]:
+        print(f" Wall ahead ")
+        actions_10()
+    if action_input.lower() in valid_hint[0]:
+        print("""You have chosen to use the Night Vision Goggles.
+      This ring is used a flashlight
+      and gives you a hint for you next direction.
+    The final direction is forward. Enter forward when the menu restarts. """)
+    if action_input.lower not in valid_hint:
+        print("Invalid direction!")
+        actions_10()
+    elif action_input.lower not in valid_actions:
+        print("Invalid direction!")
+        actions_10()

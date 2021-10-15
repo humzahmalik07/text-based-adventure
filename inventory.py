@@ -2,6 +2,7 @@ import action
 import Character
 import os
 import sys
+import intro
 
 inventory_input = input("Batman or Green Lantern: ")
 
@@ -37,9 +38,9 @@ def player_inventory(player, inventory):
             weapons.append(item)
     return protection_items, weapons
 
-
 while True:
     if inventory_input == "Batman":
+        intro.introduction()
         player_inventory("Batman", inventory)
         Character.character_intro()
         action.action_1()
@@ -51,8 +52,10 @@ while True:
         action.action_7()
         action.action_8()
         action.action_9()
+        action.action_9()
         quit()
     if inventory_input == "Green Lantern":
+        intro.introduction()
         player_inventory("Green Lantern", inventory)
         Character.character_intro_2()
         action.actions_1()
@@ -63,7 +66,7 @@ while True:
         action.actions_6()
         action.actions_7()
         action.actions_8()
-        action.actions_9()
+        action.actions_10()
         quit()
     else:
         print("invalid action")
