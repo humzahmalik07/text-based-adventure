@@ -8,6 +8,10 @@ def introduction():
   forward, backward, right, left
   """)  
 
+  print("""
+  Here is a printed map of the temple. You can use this or a hint, provided in the menu, to find your way out of the temple 
+  """)
+
   file = open("map.txt", "r")
   print(file.read())
   file.close()

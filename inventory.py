@@ -9,7 +9,7 @@ inventory_input = input("Batman or Green Lantern: ")
 # This inventory is paired with specific characters
 inventory = {"Batman": {"Night Vision Goggles":
                         {"description": "Use the Night Vision Goggles to see in the dark and find your way",
-                         "damage": 10, "protection": 0},
+                         "damage": 0, "protection": 0},
                          },
              "Green Lantern": {"Power Ring":
                            {"description":

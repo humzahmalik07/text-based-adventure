@@ -48,8 +48,8 @@ def player_inventory(player, inventory):
     return protection_items, weapons
 
 while True:
+    intro.introduction()
     if inventory_input == "Batman":
-        intro.introduction()
         player_inventory("Batman", inventory)
         Character.character_intro()
         action.action_1()
